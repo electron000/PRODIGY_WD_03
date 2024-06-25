@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getWeatherByCoordinates(lat, lon) {
-    fetch(https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey})
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => displayWeather(data))
         .catch(error => console.error('Error fetching weather data:', error));
@@ -21,7 +21,7 @@ function getWeatherByCoordinates(lat, lon) {
 function getWeatherByInput() {
     const location = document.getElementById('locationInput').value;
     if (location) {
-        fetch(https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey})
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`)
             .then(response => response.json())
             .then(data => displayWeather(data))
             .catch(error => console.error('Error fetching weather data:', error));
